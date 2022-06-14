@@ -6,8 +6,17 @@
             <div class="pull-left">
                 <h2>Laravel 8 CRUD Todo Application</h2>
             </div>
-            <div class="pull-right">
+            <div class="pull-right d-flex">
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Todo</a>
+
+                @if( auth()->check() )
+                <li class=""  style="list-style: none;">
+                    <a class="font-weight-bold" href="#">Hi {{ auth()->user()->name }}</a>
+                </li>
+                <li class="" style="list-style: none">
+                    <a class="" href="/logout">Log Out</a>
+                </li>
+                @endif
             </div>
         </div>
     </div>
