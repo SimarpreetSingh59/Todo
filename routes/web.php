@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('products', ProductController::class);
+Route::resource('products', ProductController::class)->middleware('logedin');
 
 Route::get('/register', [RegistrationController::class, 'create']);
 Route::post('register', [RegistrationController::class, 'store']);
