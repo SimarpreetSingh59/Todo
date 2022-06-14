@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,12 @@ use App\Http\Controllers\SessionController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::middleware(['logedin'])->group(
+
+// );
+
+Route::resource('posts', PostController::class);
 
 Route::resource('products', ProductController::class)->middleware('logedin');
 
