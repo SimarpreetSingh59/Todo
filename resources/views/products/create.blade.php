@@ -1,7 +1,7 @@
 @extends('products.layout')
   
 @section('content')
-<div class="row">
+<div class="row" style="margin: 5rem 0 2rem 0">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>Add New Todo</h2>
@@ -24,7 +24,7 @@
 @endif
    
 <form action="{{ route('products.store') }}" method="POST">
-    
+
     @csrf
   
      <div class="row">
